@@ -25,7 +25,8 @@ function adicionar() {
 
 function limpar() {
     let confirmacaoLimpar = prompt(`Você tem certeza? Para confirmar, digite 'confirmar'`);
-    if (confirmacaoLimpar == 'confirmar' || confirmacaoLimpar == 'Confirmar' || confirmacaoLimpar == 'CONFIRMAR') {
+    let regex = /confirmar/i;
+    if (regex.test(confirmacaoLimpar)) {
         document.getElementById('lista-produtos').innerHTML = '';
         document.getElementById('valor-total').textContent = 'R$0';
         totalDoCarrinho = 0;
